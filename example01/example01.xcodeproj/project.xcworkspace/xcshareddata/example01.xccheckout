@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>0603F464-8997-4E2A-8843-6842D5B9758F</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>example01</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4132E451CF55039A3E1CB3553986A15ECE08043A</key>
 		<string>https://github.com/chenchangqing/learncoretext.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>example01/example01.xcodeproj/project.xcworkspace</string>
+	<string>example01/example01.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4132E451CF55039A3E1CB3553986A15ECE08043A</key>
