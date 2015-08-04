@@ -13,6 +13,7 @@
 		E68E17FB1B70A2E600D28096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E68E17FA1B70A2E600D28096 /* Images.xcassets */; };
 		E68E17FE1B70A2E600D28096 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E68E17FC1B70A2E600D28096 /* LaunchScreen.xib */; };
 		E68E180A1B70A2E600D28096 /* example01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E68E18091B70A2E600D28096 /* example01Tests.swift */; };
+		E6B82E491B712A14001448B1 /* MetalType.png in Resources */ = {isa = PBXBuildFile; fileRef = E6B82E481B712A14001448B1 /* MetalType.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		E68E18031B70A2E600D28096 /* example01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E68E18081B70A2E600D28096 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E68E18091B70A2E600D28096 /* example01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example01Tests.swift; sourceTree = "<group>"; };
+		E6B82E481B712A14001448B1 /* MetalType.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MetalType.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		E68E17F11B70A2E600D28096 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6B82E481B712A14001448B1 /* MetalType.png */,
 				E68E17F21B70A2E600D28096 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E68E17F91B70A2E600D28096 /* Main.storyboard in Resources */,
+				E6B82E491B712A14001448B1 /* MetalType.png in Resources */,
 				E68E17FE1B70A2E600D28096 /* LaunchScreen.xib in Resources */,
 				E68E17FB1B70A2E600D28096 /* Images.xcassets in Resources */,
 			);
@@ -411,6 +415,7 @@
 				E68E180F1B70A2E600D28096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E68E18101B70A2E600D28096 /* Build configuration list for PBXNativeTarget "example01Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				E68E18121B70A2E600D28096 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

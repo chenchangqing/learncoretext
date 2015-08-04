@@ -9,6 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var textView: UITextView!
+    private var imageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +35,14 @@ class ViewController: UIViewController {
         textStorage.addLayoutManager(layoutManager)
         
         // 使用NSTextContainer对象初始化UITextView，并添加在当前视图
-        let textView = UITextView(frame: textViewRect, textContainer: textContainer)
+        textView = UITextView(frame: textViewRect, textContainer: textContainer)
         self.view.addSubview(textView)
+        
+        // 添加图片
+        imageView = UIImageView(frame: CGRectMake(0, 100, 200, 456/4))
+        imageView.image = UIImage(named: "MetalType")
+        imageView.center.x = textView.center.x
+        self.view.addSubview(imageView)
         
         // 通过NSTextStorage设置文字属性
         textStorage.beginEditing()
@@ -45,6 +54,9 @@ class ViewController: UIViewController {
         mark("我", inTextStorage: textStorage)
         
         textStorage.endEditing()
+        
+        // 设置环绕
+        textContainer.exclusionPaths = [self.translatedBezierPath()]
     }
 
     /**
@@ -53,11 +65,6 @@ class ViewController: UIViewController {
      * @param textStorage 存储文本信息的对象
      */
     private func mark(word:String,inTextStorage textStorage:NSTextStorage) {
-        
-        // println(textStorage.string)
-        // println(count(textStorage.string))
-        // test branch
-        // test 头像3
         
         // 正则
         let regex = NSRegularExpression(pattern: word, options: nil, error: nil)!
@@ -72,6 +79,20 @@ class ViewController: UIViewController {
             let matchRange = match.range
             textStorage .addAttribute(NSForegroundColorAttributeName, value: UIColor.redColor(), range: matchRange)
         }
+    }
+    
+    /**
+     * 获取文字环绕的矩形
+     */
+    private func translatedBezierPath() -> UIBezierPath {
+        
+        // 图片相对文本控件的坐标
+        let imageRect = textView.convertRect(imageView.frame, fromView: self.view)
+        
+        // 贝塞尔曲线，这里是矩形
+        let newPath = UIBezierPath(rect: imageRect)
+        return newPath
+        
     }
 }
 
