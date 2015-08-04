@@ -57,6 +57,23 @@ class ViewController: UIViewController {
         
         // 设置环绕
         textContainer.exclusionPaths = [self.translatedBezierPath()]
+        
+        // 用户设置中改变字体的通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("preferredContentSizeChanged:"), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        
+        // 注销通知
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
+    }
+    
+    /**
+     * 动态改变字体
+     */
+    func preferredContentSizeChanged(notification:NSNotification) {
+        
+        textView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
     }
 
     /**
