@@ -62,6 +62,7 @@ class ViewController: UIViewController {
 //=======
 //        // test branch
 //>>>>>>> feature/around_the_word
+        // test avatar4
         
         // 正则
         let regex = NSRegularExpression(pattern: word, options: nil, error: nil)!
