@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         // println(textStorage.string)
         // println(count(textStorage.string))
         // test branch
-        // test 头像2
+        // test 头像3
         
         // 正则
         let regex = NSRegularExpression(pattern: word, options: nil, error: nil)!
