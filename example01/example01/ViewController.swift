@@ -54,8 +54,8 @@ class ViewController: UIViewController {
      */
     private func mark(word:String,inTextStorage textStorage:NSTextStorage) {
         
-        println(textStorage.string)
-        println(count(textStorage.string))
+        // println(textStorage.string)
+        // println(count(textStorage.string))
         
         // 正则
         let regex = NSRegularExpression(pattern: word, options: nil, error: nil)!
