@@ -13,10 +13,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let textView = CTDisplayView()
-        textView.frame = self.view.bounds
-        textView.backgroundColor = UIColor.whiteColor()
-        
+        // 增加文字控件
+        let textRect = CGRectInset(self.view.bounds, 10.0, 20.0)
+        let textView = CTDisplayView(frame: textRect)
         self.view.addSubview(textView)
     }
 

@@ -11,27 +11,40 @@ import CoreText
 
 class CTDisplayView: UIView {
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor    = UIColor.whiteColor()
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
-        // 步骤 1
+        
+        // 当前上下文
         let context = UIGraphicsGetCurrentContext()
         
-        // 步骤 2
+        // 将坐标系上下翻转
         CGContextSetTextMatrix(context, CGAffineTransformIdentity);
         CGContextTranslateCTM(context, 0, self.bounds.size.height);
-        CGContextScaleCTM(context, 1.0, -1.0);
+        CGContextScaleCTM(context, 1, -1);
         
-        // 步骤 3
+        // 矩形文字区域
         let path = CGPathCreateMutable();
         CGPathAddRect(path, nil, self.bounds)
         
-        // 步骤 4
-        let testStr = "Hello World!创建绘制的区域，CoreText 本身支持各种文字排版的区域，我们这里简单地将 UIView 的整个界面作为排版的区域。"
-        let attString = NSAttributedString(string: testStr)
+        // 文字内容
+        let testStr     = "Hello World!创建绘制的区域，CoreText 本身支持各种文字排版的区域，我们这里简单地将 UIView 的整个界面作为排版的区域。"
+        let attString   = NSAttributedString(string: testStr)
         let framesetter = CTFramesetterCreateWithAttributedString((attString as CFAttributedStringRef))
-        let frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, count(testStr)), path, nil)
+        let frame       = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, count(testStr)), path, nil)
         
-        // 步骤 5
+        // 绘制
         CTFrameDraw(frame, context);
     }
 }
