@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         let textRect = CGRectInset(self.view.bounds, 10.0, 20.0)
         let textView = CTDisplayView(frame: textRect)
         self.view.addSubview(textView)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
