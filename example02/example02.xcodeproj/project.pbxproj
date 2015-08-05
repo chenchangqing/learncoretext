@@ -16,6 +16,9 @@
 		E6970E881B71EA450005462D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E841B71EA450005462D /* ViewController.swift */; };
 		E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E871B71EA450005462D /* CTDisplayView.swift */; };
 		E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8B1B71EA7E0005462D /* UIView+frameAdjust.m */; };
+		E6970E8E1B71ECEE0005462D /* CTFrameParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */; };
+		E6970E901B71EEF40005462D /* CoreTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8F1B71EEF40005462D /* CoreTextData.swift */; };
+		E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E911B71EF7F0005462D /* CTFrameParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,9 @@
 		E6970E871B71EA450005462D /* CTDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDisplayView.swift; sourceTree = "<group>"; };
 		E6970E8A1B71EA7E0005462D /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
 		E6970E8B1B71EA7E0005462D /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
+		E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParserConfig.swift; sourceTree = "<group>"; };
+		E6970E8F1B71EEF40005462D /* CoreTextData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextData.swift; sourceTree = "<group>"; };
+		E6970E911B71EF7F0005462D /* CTFrameParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,9 @@
 		E6970E851B71EA450005462D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */,
+				E6970E8F1B71EEF40005462D /* CoreTextData.swift */,
+				E6970E911B71EF7F0005462D /* CTFrameParser.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -252,8 +261,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6970E811B71E41C0005462D /* ColorHelper.swift in Sources */,
+				E6970E8E1B71ECEE0005462D /* CTFrameParserConfig.swift in Sources */,
 				E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */,
+				E6970E901B71EEF40005462D /* CoreTextData.swift in Sources */,
 				E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */,
+				E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */,
 				E6970E881B71EA450005462D /* ViewController.swift in Sources */,
 				E6970E571B71AC860005462D /* AppDelegate.swift in Sources */,
 			);

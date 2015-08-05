@@ -18,6 +18,16 @@ class ViewController: UIViewController {
         let textView = CTDisplayView(frame: textRect)
         self.view.addSubview(textView)
         
+        // 配置
+        let config = CTFrameParserConfig()
+        config.textColor = UIColor.redColor()
+        config.width = textRect.width
+        
+        // 数据
+        let data = CTFrameParser.parse("按照以上原则，我们将`CTDisplayView`中的部分内容拆开。", config: config)
+        textView.data = data
+        textView.setHeight(data.height)
+        textView.backgroundColor = UIColor.yellowColor()
         
     }
 
