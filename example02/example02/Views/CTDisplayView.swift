@@ -49,7 +49,7 @@ class CTDisplayView: UIView {
 //        let frame       = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, count(testStr)), path, nil)
 //        
 //        // 绘制
-//        CTFrameDraw(frame, context);
+//        CTFrameDraw(frame, context)
         
         if let data=data {
             CTFrameDraw(self.data?.ctFrame, context)
