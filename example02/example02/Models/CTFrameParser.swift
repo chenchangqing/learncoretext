@@ -8,20 +8,17 @@
 
 // 用于生成最后绘制界面需要的CTFrameRef实例
 class CTFrameParser: NSObject {
-   
+    
     /**
-     * 根据配置及需要渲染的文字生成渲染需要的数据
-     * @param content 需要渲染的文字
-     * @param config  配置信息
-     * @return 渲染需要的数据
-     */
-    class func parse(content:String, config:CTFrameParserConfig) -> CoreTextData {
-        
-        let attributes      = self.attributes(config)
-        let contentString   = NSAttributedString(string: content, attributes: attributes)
+    * 根据配置及需要渲染的文字生成渲染需要的数据
+    * @param content 需要渲染的文字 NSAttributedString
+    * @param config  配置信息
+    * @return 渲染需要的数据
+    */
+    class func parse(attributeStr content:NSAttributedString, config:CTFrameParserConfig) -> CoreTextData {
         
         // 创建 CTFramesetterRef 实例
-        let framesetter = CTFramesetterCreateWithAttributedString((contentString as CFAttributedStringRef))
+        let framesetter = CTFramesetterCreateWithAttributedString((content as CFAttributedStringRef))
         
         // 获得要绘制的区域的高度
         let restrictSize = CGSizeMake(config.width, CGFloat.max)
@@ -35,6 +32,20 @@ class CTFrameParser: NSObject {
         let data = CoreTextData(ctFrame: frame, height: textHeight)
         
         return data
+    }
+   
+    /**
+     * 根据配置及需要渲染的文字生成渲染需要的数据
+     * @param content 需要渲染的文字 String
+     * @param config  配置信息
+     * @return 渲染需要的数据
+     */
+    class func parse(content:String, config:CTFrameParserConfig) -> CoreTextData {
+        
+        let attributes      = self.attributes(config)
+        let contentString   = NSAttributedString(string: content, attributes: attributes)
+        
+        return self.parse(attributeStr: contentString, config: config)
     }
     
     /**
@@ -63,7 +74,7 @@ class CTFrameParser: NSObject {
         
         // 封装
         let dict = [
-            (kCTForegroundColorAttributeName as NSObject): textColor.CGColor,
+            NSForegroundColorAttributeName: textColor,
             (kCTFontAttributeName as NSObject):(fontRef as AnyObject),
             (kCTParagraphStyleAttributeName as NSObject):(theParagraphRef as AnyObject)
         ]
