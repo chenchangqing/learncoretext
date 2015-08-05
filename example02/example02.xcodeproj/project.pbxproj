@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E6970E571B71AC860005462D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E561B71AC860005462D /* AppDelegate.swift */; };
-		E6970E591B71AC860005462D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E581B71AC860005462D /* ViewController.swift */; };
 		E6970E5C1B71AC860005462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5A1B71AC860005462D /* Main.storyboard */; };
 		E6970E5E1B71AC860005462D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5D1B71AC860005462D /* Images.xcassets */; };
 		E6970E611B71AC860005462D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5F1B71AC860005462D /* LaunchScreen.xib */; };
 		E6970E6D1B71AC860005462D /* example02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E6C1B71AC860005462D /* example02Tests.swift */; };
-		E6970E771B71BEAE0005462D /* CTDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E761B71BEAE0005462D /* CTDisplayView.swift */; };
-		E6970E7F1B71E30D0005462D /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = E6970E7E1B71E30D0005462D /* UIView+frameAdjust.m */; };
 		E6970E811B71E41C0005462D /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E801B71E41C0005462D /* ColorHelper.swift */; };
+		E6970E881B71EA450005462D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E841B71EA450005462D /* ViewController.swift */; };
+		E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E871B71EA450005462D /* CTDisplayView.swift */; };
+		E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8B1B71EA7E0005462D /* UIView+frameAdjust.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,19 +32,19 @@
 		E6970E511B71AC860005462D /* example02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6970E551B71AC860005462D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6970E561B71AC860005462D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6970E581B71AC860005462D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E6970E5B1B71AC860005462D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6970E5D1B71AC860005462D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E6970E601B71AC860005462D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E6970E661B71AC860005462D /* example02Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example02Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6970E6B1B71AC860005462D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6970E6C1B71AC860005462D /* example02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example02Tests.swift; sourceTree = "<group>"; };
-		E6970E761B71BEAE0005462D /* CTDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDisplayView.swift; sourceTree = "<group>"; };
 		E6970E781B71E1820005462D /* example02-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example02-Prefix.pch"; sourceTree = "<group>"; };
 		E6970E791B71E2280005462D /* example02-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example02-Bridging-Header.h"; sourceTree = "<group>"; };
-		E6970E7D1B71E30D0005462D /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
-		E6970E7E1B71E30D0005462D /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 		E6970E801B71E41C0005462D /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
+		E6970E841B71EA450005462D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6970E871B71EA450005462D /* CTDisplayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTDisplayView.swift; sourceTree = "<group>"; };
+		E6970E8A1B71EA7E0005462D /* UIView+frameAdjust.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frameAdjust.h"; sourceTree = "<group>"; };
+		E6970E8B1B71EA7E0005462D /* UIView+frameAdjust.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frameAdjust.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,15 +86,14 @@
 		E6970E531B71AC860005462D /* example02 */ = {
 			isa = PBXGroup;
 			children = (
-				E6970E7D1B71E30D0005462D /* UIView+frameAdjust.h */,
-				E6970E7E1B71E30D0005462D /* UIView+frameAdjust.m */,
+				E6970E831B71EA450005462D /* Controllers */,
+				E6970E851B71EA450005462D /* Models */,
+				E6970E861B71EA450005462D /* Views */,
 				E6970E561B71AC860005462D /* AppDelegate.swift */,
-				E6970E581B71AC860005462D /* ViewController.swift */,
 				E6970E5A1B71AC860005462D /* Main.storyboard */,
 				E6970E5D1B71AC860005462D /* Images.xcassets */,
 				E6970E5F1B71AC860005462D /* LaunchScreen.xib */,
 				E6970E541B71AC860005462D /* Supporting Files */,
-				E6970E761B71BEAE0005462D /* CTDisplayView.swift */,
 				E6970E791B71E2280005462D /* example02-Bridging-Header.h */,
 				E6970E801B71E41C0005462D /* ColorHelper.swift */,
 			);
@@ -125,6 +124,31 @@
 				E6970E6B1B71AC860005462D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6970E831B71EA450005462D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6970E841B71EA450005462D /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E6970E851B71EA450005462D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E6970E861B71EA450005462D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E6970E8A1B71EA7E0005462D /* UIView+frameAdjust.h */,
+				E6970E8B1B71EA7E0005462D /* UIView+frameAdjust.m */,
+				E6970E871B71EA450005462D /* CTDisplayView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,11 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6970E591B71AC860005462D /* ViewController.swift in Sources */,
 				E6970E811B71E41C0005462D /* ColorHelper.swift in Sources */,
-				E6970E7F1B71E30D0005462D /* UIView+frameAdjust.m in Sources */,
+				E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */,
+				E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */,
+				E6970E881B71EA450005462D /* ViewController.swift in Sources */,
 				E6970E571B71AC860005462D /* AppDelegate.swift in Sources */,
-				E6970E771B71BEAE0005462D /* CTDisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
