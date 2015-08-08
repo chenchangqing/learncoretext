@@ -1,6 +1,6 @@
 [
   {
-  "type" : "img",
+  "type" : "image",
   "width" : "200",
   "height" : "108",
   "name" : "coretext-image-1.jpg"
@@ -24,7 +24,7 @@
   "type" : "txt"
   },
   {
-  "type" : "img",
+  "type" : "image",
   "width" : "200",
   "height" : "130",
   "name" : "coretext-image-2.jpg"
