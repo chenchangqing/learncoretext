@@ -10,15 +10,16 @@
 class CTFrameParser: NSObject {
     
     /**
-    * 根据配置及需要渲染的文字生成渲染需要的数据
-    * @param content 需要渲染的文字 NSAttributedString
+    * CoreTextData实例
+    * @param attributedString 需要渲染的文字
     * @param config  配置信息
+    *
     * @return 渲染需要的数据
     */
-    class func parse(attributeStr content:NSAttributedString, config:CTFrameParserConfig) -> CoreTextData {
+    class func parseToCoreTextData(#attributedString:NSAttributedString, config:CTFrameParserConfig) -> CoreTextData {
         
         // 创建 CTFramesetterRef 实例
-        let framesetter = CTFramesetterCreateWithAttributedString((content as CFAttributedStringRef))
+        let framesetter = CTFramesetterCreateWithAttributedString((attributedString as CFAttributedStringRef))
         
         // 获得要绘制的区域的高度
         let restrictSize = CGSizeMake(config.width, CGFloat.max)
@@ -33,27 +34,115 @@ class CTFrameParser: NSObject {
         
         return data
     }
-   
+    
     /**
-     * 根据配置及需要渲染的文字生成渲染需要的数据
-     * @param content 需要渲染的文字 String
+     * CoreTextData实例
+     * @param normalString 需要渲染的文字
      * @param config  配置信息
+     *
      * @return 渲染需要的数据
      */
-    class func parse(content:String, config:CTFrameParserConfig) -> CoreTextData {
+    class func parseToCoreTextData(#normalString:String, config:CTFrameParserConfig) -> CoreTextData {
         
         let attributes      = self.attributes(config)
-        let contentString   = NSAttributedString(string: content, attributes: attributes)
+        let content         = NSAttributedString(string: normalString, attributes: attributes)
         
-        return self.parse(attributeStr: contentString, config: config)
+        return self.parseToCoreTextData(attributedString: content, config: config)
     }
+    
+    /**
+    * CoreTextData实例
+    * @param templatePath 模板
+    * @param config  配置信息
+    *
+    * @return 渲染需要的数据
+    */
+    class func parseToCoreTextData(#templatePath:String, config:CTFrameParserConfig) -> CoreTextData {
+        
+        let content = self.parseToNSAttributedString(templatePath: templatePath, config: config)
+        return self.parseToCoreTextData(attributedString: content, config: config)
+    }
+    
+    /**
+    * NSAttributedString实例
+    * @param templatePath 模板
+    * @param config 配置信息
+    *
+    * @return 富文本
+    */
+    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig) -> NSAttributedString {
+        
+        let data = NSData(contentsOfFile: templatePath)
+        let result = NSMutableAttributedString()
+        
+        if let data=data {
+            
+            // 开始解析
+            let array = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: nil) as? [[String:String]]
+            
+            if let array=array {
+                
+                for dic in array {
+                    
+                    let type = dic["type"]
+                    
+                    // 文本类型
+                    if type == "txt" {
+                        
+                        let subStr = self.parseToNSAttributedString(templateDic: dic, config: config)
+                        result.appendAttributedString(subStr)
+                    }
+                }
+            }
+        }
+        
+        return result
+    }
+    
+    /**
+     * NSAttributedString实例
+     * @param templateDic 文字属性字典
+     * @param config 配置信息
+     * 
+     * @return 富文本
+     */
+    class func parseToNSAttributedString(#templateDic:[String:String],config:CTFrameParserConfig) -> NSAttributedString {
+        
+        var attributes      = self.attributes(config)
+        
+        // 设置颜色
+        let colorValue = templateDic["color"]
+        if let colorValue = colorValue {
+            
+            attributes[NSForegroundColorAttributeName] = ColorHelper.hexStringToUIColor(colorValue)
+        }
+        
+        // 设置大小
+        let sizeValue = templateDic["size"]
+        if let sizeValue = sizeValue {
+            
+            let cgsize = CGFloat((sizeValue as NSString).floatValue)
+            
+            if cgsize > 0  {
+                
+                attributes[NSFontAttributeName] = UIFont(name: "ArialMT", size: cgsize)
+            }
+        }
+        
+        // 文字
+        let contentStr = templateDic["content"] != nil ? templateDic["content"] : ""
+        
+        return NSAttributedString(string: contentStr!, attributes: attributes)
+    }
+    
+    // MARK: -
     
     /**
      * 应用文字配置信息
      * @param config 配置信息
      * @return 文字基本属性
      */
-    class func attributes(config:CTFrameParserConfig) -> [NSObject : AnyObject]? {
+    class func attributes(config:CTFrameParserConfig) -> [NSObject : AnyObject] {
         
         // 字体大小
         let fontSize    = config.fontSize

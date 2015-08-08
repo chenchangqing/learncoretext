@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6860FFC1B75F79100CE4DE4 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = E6860FFB1B75F79100CE4DE4 /* content.json */; };
 		E6970E571B71AC860005462D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E561B71AC860005462D /* AppDelegate.swift */; };
 		E6970E5C1B71AC860005462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5A1B71AC860005462D /* Main.storyboard */; };
 		E6970E5E1B71AC860005462D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5D1B71AC860005462D /* Images.xcassets */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6860FFB1B75F79100CE4DE4 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		E6970E511B71AC860005462D /* example02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6970E551B71AC860005462D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6970E561B71AC860005462D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				E6970E551B71AC860005462D /* Info.plist */,
 				E6970E781B71E1820005462D /* example02-Prefix.pch */,
+				E6860FFB1B75F79100CE4DE4 /* content.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				E6970E5C1B71AC860005462D /* Main.storyboard in Resources */,
 				E6970E611B71AC860005462D /* LaunchScreen.xib in Resources */,
 				E6970E5E1B71AC860005462D /* Images.xcassets in Resources */,
+				E6860FFC1B75F79100CE4DE4 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +474,7 @@
 				E6970E721B71AC860005462D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6970E731B71AC860005462D /* Build configuration list for PBXNativeTarget "example02Tests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +483,7 @@
 				E6970E751B71AC860005462D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
