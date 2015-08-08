@@ -59,8 +59,12 @@ class CTFrameParser: NSObject {
     */
     class func parseToCoreTextData(#templatePath:String, config:CTFrameParserConfig) -> CoreTextData {
         
-        let content = self.parseToNSAttributedString(templatePath: templatePath, config: config)
-        return self.parseToCoreTextData(attributedString: content, config: config)
+        
+        var imageArray          = [CoreTextImageData]()
+        let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:imageArray)
+        let coreTextData        = self.parseToCoreTextData(attributedString: content, config: config)
+        coreTextData.imageArray = imageArray
+        return coreTextData
     }
     
     /**
@@ -70,7 +74,7 @@ class CTFrameParser: NSObject {
     *
     * @return 富文本
     */
-    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig) -> NSAttributedString {
+    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig,var imageArray:[CoreTextImageData]) -> NSAttributedString {
         
         let data = NSData(contentsOfFile: templatePath)
         let result = NSMutableAttributedString()
@@ -89,7 +93,18 @@ class CTFrameParser: NSObject {
                     // 文本类型
                     if type == "txt" {
                         
-                        let subStr = self.parseToNSAttributedString(templateDic: dic, config: config)
+                        let subStr = self.parseToNSAttributedString(textTemplateDic: dic, config: config)
+                        result.appendAttributedString(subStr)
+                    }
+                    
+                    if type == "image" {
+                        
+                        let imageData = CoreTextImageData()
+                        imageData.name  = dic["name"]
+                        imageData.imagePosition = CGRectMake(0, 0, 0, 0)
+                        imageArray.append(imageData)
+                        
+                        let subStr = self.parseToNSAttributedString(imageTemplateDic: dic, config: config)
                         result.appendAttributedString(subStr)
                     }
                 }
@@ -101,24 +116,24 @@ class CTFrameParser: NSObject {
     
     /**
      * NSAttributedString实例
-     * @param templateDic 文字属性字典
+     * @param textTemplateDic 文字属性字典
      * @param config 配置信息
      * 
      * @return 富文本
      */
-    class func parseToNSAttributedString(#templateDic:[String:String],config:CTFrameParserConfig) -> NSAttributedString {
+    class func parseToNSAttributedString(#textTemplateDic:[String:String],config:CTFrameParserConfig) -> NSAttributedString {
         
         var attributes      = self.attributes(config)
         
         // 设置颜色
-        let colorValue = templateDic["color"]
+        let colorValue = textTemplateDic["color"]
         if let colorValue = colorValue {
             
             attributes[NSForegroundColorAttributeName] = ColorHelper.hexStringToUIColor(colorValue)
         }
         
         // 设置大小
-        let sizeValue = templateDic["size"]
+        let sizeValue = textTemplateDic["size"]
         if let sizeValue = sizeValue {
             
             let cgsize = CGFloat((sizeValue as NSString).floatValue)
@@ -130,9 +145,21 @@ class CTFrameParser: NSObject {
         }
         
         // 文字
-        let contentStr = templateDic["content"] != nil ? templateDic["content"] : ""
+        let contentStr = textTemplateDic["content"] != nil ? textTemplateDic["content"] : ""
         
         return NSAttributedString(string: contentStr!, attributes: attributes)
+    }
+    
+    /**
+    * NSAttributedString实例
+    * @param textTemplateDic 图片属性字典
+    * @param config 配置信息
+    *
+    * @return 富文本
+    */
+    class func parseToNSAttributedString(#imageTemplateDic:[String:String],config:CTFrameParserConfig) -> NSAttributedString {
+        
+        return NSAttributedString()
     }
     
     // MARK: -

@@ -20,6 +20,9 @@
 		E6970E8E1B71ECEE0005462D /* CTFrameParserConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */; };
 		E6970E901B71EEF40005462D /* CoreTextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E8F1B71EEF40005462D /* CoreTextData.swift */; };
 		E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E911B71EF7F0005462D /* CTFrameParser.swift */; };
+		E6B245C31B763FFF004B1F54 /* coretext-image-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6B245C11B763FFF004B1F54 /* coretext-image-1.jpg */; };
+		E6B245C41B763FFF004B1F54 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6B245C21B763FFF004B1F54 /* coretext-image-2.jpg */; };
+		E6B245C61B76401F004B1F54 /* CoreTextImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParserConfig.swift; sourceTree = "<group>"; };
 		E6970E8F1B71EEF40005462D /* CoreTextData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextData.swift; sourceTree = "<group>"; };
 		E6970E911B71EF7F0005462D /* CTFrameParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTFrameParser.swift; sourceTree = "<group>"; };
+		E6B245C11B763FFF004B1F54 /* coretext-image-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-1.jpg"; sourceTree = "<group>"; };
+		E6B245C21B763FFF004B1F54 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
+		E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextImageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,8 @@
 		E6970E541B71AC860005462D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6B245C11B763FFF004B1F54 /* coretext-image-1.jpg */,
+				E6B245C21B763FFF004B1F54 /* coretext-image-2.jpg */,
 				E6970E551B71AC860005462D /* Info.plist */,
 				E6970E781B71E1820005462D /* example02-Prefix.pch */,
 				E6860FFB1B75F79100CE4DE4 /* content.json */,
@@ -149,6 +157,7 @@
 				E6970E8D1B71ECEE0005462D /* CTFrameParserConfig.swift */,
 				E6970E8F1B71EEF40005462D /* CoreTextData.swift */,
 				E6970E911B71EF7F0005462D /* CTFrameParser.swift */,
+				E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +255,8 @@
 				E6970E5C1B71AC860005462D /* Main.storyboard in Resources */,
 				E6970E611B71AC860005462D /* LaunchScreen.xib in Resources */,
 				E6970E5E1B71AC860005462D /* Images.xcassets in Resources */,
+				E6B245C31B763FFF004B1F54 /* coretext-image-1.jpg in Resources */,
+				E6B245C41B763FFF004B1F54 /* coretext-image-2.jpg in Resources */,
 				E6860FFC1B75F79100CE4DE4 /* content.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +282,7 @@
 				E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */,
 				E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */,
 				E6970E881B71EA450005462D /* ViewController.swift in Sources */,
+				E6B245C61B76401F004B1F54 /* CoreTextImageData.swift in Sources */,
 				E6970E571B71AC860005462D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
