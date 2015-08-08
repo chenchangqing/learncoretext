@@ -11,7 +11,8 @@
 @implementation CTFrameParserCAPI
 
 static CGFloat ascentCallback(void *ref){
-    return 100;//[(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"height"] floatValue];
+    
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"height"] floatValue];
 }
 
 static CGFloat descentCallback(void *ref){
@@ -19,7 +20,7 @@ static CGFloat descentCallback(void *ref){
 }
 
 static CGFloat widthCallback(void* ref){
-    return 100;//[(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"width"] floatValue];
+    return [(NSNumber*)[(__bridge NSDictionary*)ref objectForKey:@"width"] floatValue];
 }
 
 + (NSAttributedString *)parseToNSAttributedString:(NSDictionary *)imageTemplateDic attributes:(NSDictionary *) attributes {
@@ -30,7 +31,15 @@ static CGFloat widthCallback(void* ref){
     callbacks.getAscent = ascentCallback;
     callbacks.getDescent = descentCallback;
     callbacks.getWidth = widthCallback;
-    CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, (__bridge void *)(imageTemplateDic));
+    
+    // 避免野指针 可能是因为swift调用引起
+    NSDictionary *temp = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [imageTemplateDic objectForKey:@"width"],@"width",
+                          [imageTemplateDic objectForKey:@"name"],@"name",
+                          [imageTemplateDic objectForKey:@"height"],@"height",
+                          nil];
+    
+    CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, (__bridge void *)(temp));
     
     // 使用0xFFFC作为空白的占位符
     unichar objectReplacementChar = 0xFFFC;
@@ -67,10 +76,10 @@ static CGFloat widthCallback(void* ref){
                     continue;
                 }
                 
-//                NSDictionary * metaDic = CTRunDelegateGetRefCon(delegate);
-//                if (![metaDic isKindOfClass:[NSDictionary class]]) {
-//                    continue;
-//                }
+                NSDictionary * metaDic = CTRunDelegateGetRefCon(delegate);
+                if (![metaDic isKindOfClass:[NSDictionary class]]) {
+                    continue;
+                }
                 
                 CGRect runBounds;
                 CGFloat ascent;
