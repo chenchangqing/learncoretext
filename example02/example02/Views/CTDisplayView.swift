@@ -38,21 +38,43 @@ class CTDisplayView: UIView {
         CGContextTranslateCTM(context, 0, self.bounds.size.height);
         CGContextScaleCTM(context, 1, -1);
         
-//        // 矩形文字区域
-//        let path = CGPathCreateMutable();
-//        CGPathAddRect(path, nil, self.bounds)
-//        
-//        // 文字内容
-//        let testStr     = "Hello World!创建绘制的区域，CoreText 本身支持各种文字排版的区域，我们这里简单地将 UIView 的整个界面作为排版的区域。"
-//        let attString   = NSAttributedString(string: testStr)
-//        let framesetter = CTFramesetterCreateWithAttributedString((attString as CFAttributedStringRef))
-//        let frame       = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, count(testStr)), path, nil)
-//        
-//        // 绘制
-//        CTFrameDraw(frame, context)
+//        type01(context)
+        type02(context)
+    }
+    
+    private func type01(context:CGContext) {
+        // 矩形文字区域
+        let path = CGPathCreateMutable();
+        CGPathAddRect(path, nil, self.bounds)
+        
+        // 文字内容
+        let testStr     = "Hello World!创建绘制的区域，CoreText 本身支持各种文字排版的区域，我们这里简单地将 UIView 的整个界面作为排版的区域。"
+        let attString   = NSAttributedString(string: testStr)
+        let framesetter = CTFramesetterCreateWithAttributedString((attString as CFAttributedStringRef))
+        let frame       = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, count(testStr)), path, nil)
+        
+        // 绘制
+        CTFrameDraw(frame, context)
+
+    }
+    
+    private func type02(context:CGContext) {
         
         if let data=data {
             CTFrameDraw(self.data?.ctFrame, context)
+            
+            if let imageArray = data.imageArray {
+                
+                for imageData in imageArray {
+                    
+                    let image = UIImage(named: imageData.name)
+                    
+                    if let image = image {
+                        
+                        CGContextDrawImage(context, imageData.imagePosition, image.CGImage);
+                    }
+                }
+            }
         }
     }
 }

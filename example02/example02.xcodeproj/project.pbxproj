@@ -23,6 +23,7 @@
 		E6B245C31B763FFF004B1F54 /* coretext-image-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6B245C11B763FFF004B1F54 /* coretext-image-1.jpg */; };
 		E6B245C41B763FFF004B1F54 /* coretext-image-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E6B245C21B763FFF004B1F54 /* coretext-image-2.jpg */; };
 		E6B245C61B76401F004B1F54 /* CoreTextImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */; };
+		E6B245C91B76566F004B1F54 /* CTFrameParserCAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B245C81B76566F004B1F54 /* CTFrameParserCAPI.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		E6B245C11B763FFF004B1F54 /* coretext-image-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-1.jpg"; sourceTree = "<group>"; };
 		E6B245C21B763FFF004B1F54 /* coretext-image-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "coretext-image-2.jpg"; sourceTree = "<group>"; };
 		E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextImageData.swift; sourceTree = "<group>"; };
+		E6B245C71B76566F004B1F54 /* CTFrameParserCAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTFrameParserCAPI.h; sourceTree = "<group>"; };
+		E6B245C81B76566F004B1F54 /* CTFrameParserCAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTFrameParserCAPI.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +161,8 @@
 				E6970E8F1B71EEF40005462D /* CoreTextData.swift */,
 				E6970E911B71EF7F0005462D /* CTFrameParser.swift */,
 				E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */,
+				E6B245C71B76566F004B1F54 /* CTFrameParserCAPI.h */,
+				E6B245C81B76566F004B1F54 /* CTFrameParserCAPI.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */,
 				E6970E901B71EEF40005462D /* CoreTextData.swift in Sources */,
 				E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */,
+				E6B245C91B76566F004B1F54 /* CTFrameParserCAPI.m in Sources */,
 				E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */,
 				E6970E881B71EA450005462D /* ViewController.swift in Sources */,
 				E6B245C61B76401F004B1F54 /* CoreTextImageData.swift in Sources */,
@@ -345,6 +351,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -389,6 +396,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -411,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PREFIX_HEADER = "example02/example02-Prefix.pch";
 				INFOPLIST_FILE = example02/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -425,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				GCC_PREFIX_HEADER = "example02/example02-Prefix.pch";
 				INFOPLIST_FILE = example02/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

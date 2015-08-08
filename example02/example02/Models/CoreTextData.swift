@@ -14,7 +14,7 @@ class CoreTextData: NSObject {
     var imageArray  : [CoreTextImageData]? // 图片frame、名称等信息
     {
         willSet {
-            
+            fillImagePosition(newValue!)
         }
     }
     
@@ -32,6 +32,15 @@ class CoreTextData: NSObject {
      */
     private func fillImagePosition(imageArray:[CoreTextImageData]) {
         
+        if self.imageArray?.count == 0 {
+            return
+        }
+        
+        for image in imageArray {
+            
+            let ctRunRect = CTFrameParserCAPI.findImagePosition(ctFrame, ctRunIndex: image.ctRunIndex)
+            image.imagePosition = ctRunRect
+        }
     }
 
 }

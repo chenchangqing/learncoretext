@@ -12,4 +12,5 @@ class CoreTextImageData: NSObject {
  
     var name: String!           // 图片名称
     var imagePosition: CGRect!  // 此坐标是 CoreText 的坐标系，而不是UIKit的坐标系
+    var ctRunIndex: Int!        // 图片在文本中的位置
 }

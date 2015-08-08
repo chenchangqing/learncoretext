@@ -61,7 +61,7 @@ class CTFrameParser: NSObject {
         
         
         var imageArray          = [CoreTextImageData]()
-        let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:imageArray)
+        let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:&imageArray)
         let coreTextData        = self.parseToCoreTextData(attributedString: content, config: config)
         coreTextData.imageArray = imageArray
         return coreTextData
@@ -74,7 +74,7 @@ class CTFrameParser: NSObject {
     *
     * @return 富文本
     */
-    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig,var imageArray:[CoreTextImageData]) -> NSAttributedString {
+    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig,inout imageArray:[CoreTextImageData]) -> NSAttributedString {
         
         let data = NSData(contentsOfFile: templatePath)
         let result = NSMutableAttributedString()
@@ -86,25 +86,26 @@ class CTFrameParser: NSObject {
             
             if let array=array {
                 
-                for dic in array {
+                for(var i=0;i<array.count;i++) {
                     
-                    let type = dic["type"]
+                    let type = array[i]["type"]
                     
                     // 文本类型
                     if type == "txt" {
                         
-                        let subStr = self.parseToNSAttributedString(textTemplateDic: dic, config: config)
+                        let subStr = self.parseToNSAttributedString(textTemplateDic: array[i], config: config)
                         result.appendAttributedString(subStr)
                     }
                     
                     if type == "image" {
                         
                         let imageData = CoreTextImageData()
-                        imageData.name  = dic["name"]
+                        imageData.name  = array[i]["name"]
                         imageData.imagePosition = CGRectMake(0, 0, 0, 0)
+                        imageData.ctRunIndex = i
                         imageArray.append(imageData)
                         
-                        let subStr = self.parseToNSAttributedString(imageTemplateDic: dic, config: config)
+                        let subStr = self.parseToNSAttributedString(imageTemplateDic: array[i], config: config)
                         result.appendAttributedString(subStr)
                     }
                 }
@@ -159,7 +160,10 @@ class CTFrameParser: NSObject {
     */
     class func parseToNSAttributedString(#imageTemplateDic:[String:String],config:CTFrameParserConfig) -> NSAttributedString {
         
-        return NSAttributedString()
+        let attributes      = self.attributes(config)
+        let attributeString = CTFrameParserCAPI.parseToNSAttributedString(imageTemplateDic, attributes: attributes)
+        
+        return attributeString
     }
     
     // MARK: -

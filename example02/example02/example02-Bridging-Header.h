@@ -3,3 +3,4 @@
 //
 
 #import "example02-Prefix.pch"
+#import "CTFrameParserCAPI.h"
