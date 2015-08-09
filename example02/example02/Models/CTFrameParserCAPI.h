@@ -20,13 +20,12 @@
 + (NSAttributedString *)parseToNSAttributedString:(NSDictionary *)imageTemplateDic attributes:(NSDictionary *) attributes;
 
 /**
- * 返回指定图片的坐标系
+ * 返回指定图片的坐标数组
  * @param ctFrame 文字区域
- * @param ctRunIndex 图片坐在CTRunRef数组的位置
  * 
- * @return 图片坐标
+ * @return 图片坐标数组
  */
-+ (CGRect)findImagePosition:(CTFrameRef) ctFrame ctRunIndex:(NSInteger) ctRunIndex ;
++ (NSArray *)findImagePosition:(CTFrameRef) ctFrame;
 
 /**
  * 返回字符串的偏移量

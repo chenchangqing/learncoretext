@@ -33,14 +33,14 @@ class CoreTextData: NSObject {
      */
     private func fillImagePosition(imageArray:[CoreTextImageData]) {
         
-        if self.imageArray?.count == 0 {
+        if imageArray.count == 0 {
             return
         }
+        let ctRunRectArray = CTFrameParserCAPI.findImagePosition(ctFrame) as! [NSValue]
         
-        for image in imageArray {
+        for (var i=0;i<imageArray.count;i++) {
             
-            let ctRunRect = CTFrameParserCAPI.findImagePosition(ctFrame, ctRunIndex: image.ctRunIndex)
-            image.imagePosition = ctRunRect
+            imageArray[i].imagePosition = ctRunRectArray[i].CGRectValue()
         }
     }
 

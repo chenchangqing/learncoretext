@@ -1,7 +1,7 @@
 [
   {
   "type" : "image",
-  "width" : "200",
+  "width" : "300",
   "height" : "108",
   "name" : "coretext-image-1.jpg"
   },
@@ -49,5 +49,11 @@
   "color" : "000000",
   "content" : " 大家可以尝试点击一下 ",
   "type" : "txt"
-  }
+ },
+ {
+ "type" : "image",
+ "width" : "40",
+ "height" : "20",
+ "name" : "coretext-image-2.jpg"
+ }
 ]

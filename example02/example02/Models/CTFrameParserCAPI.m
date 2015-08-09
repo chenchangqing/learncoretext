@@ -52,14 +52,14 @@ static CGFloat widthCallback(void* ref){
     return space;
 }
 
-+ (CGRect)findImagePosition:(CTFrameRef) ctFrame ctRunIndex:(NSInteger) ctRunIndex {
++ (NSArray *)findImagePosition:(CTFrameRef) ctFrame {
     
     NSArray *lines = (NSArray *)CTFrameGetLines(ctFrame);
     NSUInteger lineCount = [lines count];
     CGPoint lineOrigins[lineCount];
     CTFrameGetLineOrigins(ctFrame, CFRangeMake(0, 0), lineOrigins);
     
-    NSInteger imgIndex = 0;
+    NSMutableArray *rectArray = [NSMutableArray arrayWithCapacity:0];
     
     for (int i = 0; i < lineCount; ++i) {
         
@@ -67,42 +67,37 @@ static CGFloat widthCallback(void* ref){
         NSArray * runObjArray = (NSArray *)CTLineGetGlyphRuns(line);
         for (id runObj in runObjArray) {
             
-            if (ctRunIndex == imgIndex) {
-                
-                CTRunRef run = (__bridge CTRunRef)runObj;
-                NSDictionary *runAttributes = (NSDictionary *)CTRunGetAttributes(run);
-                CTRunDelegateRef delegate = (__bridge CTRunDelegateRef)[runAttributes valueForKey:(id)kCTRunDelegateAttributeName];
-                if (delegate == nil) {
-                    continue;
-                }
-                
-                NSDictionary * metaDic = CTRunDelegateGetRefCon(delegate);
-                if (![metaDic isKindOfClass:[NSDictionary class]]) {
-                    continue;
-                }
-                
-                CGRect runBounds;
-                CGFloat ascent;
-                CGFloat descent;
-                runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL);
-                runBounds.size.height = ascent + descent;
-                
-                CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL);
-                runBounds.origin.x = lineOrigins[i].x + xOffset;
-                runBounds.origin.y = lineOrigins[i].y;
-                runBounds.origin.y -= descent;
-                
-                CGPathRef pathRef = CTFrameGetPath(ctFrame);
-                CGRect colRect = CGPathGetBoundingBox(pathRef);
-                
-                CGRect delegateBounds = CGRectOffset(runBounds, colRect.origin.x, colRect.origin.y);
-                return  delegateBounds;
+            CTRunRef run = (__bridge CTRunRef)runObj;
+            NSDictionary *runAttributes = (NSDictionary *)CTRunGetAttributes(run);
+            CTRunDelegateRef delegate = (__bridge CTRunDelegateRef)[runAttributes valueForKey:(id)kCTRunDelegateAttributeName];
+            if (delegate == nil) {
+                continue;
             }
             
-            imgIndex ++;
+            NSDictionary * metaDic = CTRunDelegateGetRefCon(delegate);
+            if (![metaDic isKindOfClass:[NSDictionary class]]) {
+                continue;
+            }
+            
+            CGRect runBounds;
+            CGFloat ascent;
+            CGFloat descent;
+            runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL);
+            runBounds.size.height = ascent + descent;
+            
+            CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL);
+            runBounds.origin.x = lineOrigins[i].x + xOffset;
+            runBounds.origin.y = lineOrigins[i].y;
+            runBounds.origin.y -= descent;
+            
+            CGPathRef pathRef = CTFrameGetPath(ctFrame);
+            CGRect colRect = CGPathGetBoundingBox(pathRef);
+            
+            CGRect delegateBounds = CGRectOffset(runBounds, colRect.origin.x, colRect.origin.y);
+            [rectArray addObject:[NSValue valueWithCGRect:delegateBounds]];
         }
     }
-    return  CGRectMake(0, 0, 0, 0);
+    return  rectArray;
 }
 
 + (CFIndex)touchContentOffsetInView:(UIView *)view atPoint:(CGPoint)point data:(CTFrameRef)textFrame {
