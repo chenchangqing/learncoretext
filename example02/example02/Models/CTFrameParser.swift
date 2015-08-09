@@ -112,7 +112,6 @@ class CTFrameParser: NSObject {
                         let imageData = CoreTextImageData()
                         imageData.name  = array[i]["name"]
                         imageData.imagePosition = CGRectMake(0, 0, 0, 0)
-                        imageData.ctRunIndex = i
                         imageArray.append(imageData)
                         
                         let subStr = self.parseToNSAttributedString(imageTemplateDic: array[i], config: config)
