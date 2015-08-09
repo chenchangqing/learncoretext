@@ -19,11 +19,13 @@ class CTDisplayView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupEvents()
         self.backgroundColor    = UIColor.whiteColor()
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupEvents()
     }
     
     override func drawRect(rect: CGRect) {
@@ -40,6 +42,42 @@ class CTDisplayView: UIView {
         
 //        type01(context)
         type02(context)
+    }
+    
+    /** 
+     * 设置事件
+     */
+    private func setupEvents() {
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: Selector("userTapGestureDetected:"))
+        self.addGestureRecognizer(tapRecognizer)
+        self.userInteractionEnabled = true
+    }
+    
+    /**
+     * 单击
+     */
+    func userTapGestureDetected(recognizer:UIGestureRecognizer) {
+        
+        let point = recognizer.locationInView(self)
+        if let imageArray=data?.imageArray {
+            
+            for imageData in imageArray {
+                
+                // 翻转坐标系，因为 imageData 中的坐标是 CoreText 的坐标系
+                let imageRect       = imageData.imagePosition
+                var imagePosition   = imageRect.origin
+                imagePosition.y     = self.bounds.size.height - imageRect.origin.y - imageRect.size.height
+                let rect            = CGRectMake(imagePosition.x, imagePosition.y, imageRect.size.width, imageRect.size.height)
+                
+                // 检测点击位置 Point 是否在 rect 之内
+                if CGRectContainsPoint(rect, point) {
+                    
+                    println("bingo")
+                    break
+                }
+            }
+        }
     }
     
     /**
