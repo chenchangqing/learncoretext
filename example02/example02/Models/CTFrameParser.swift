@@ -60,15 +60,20 @@ class CTFrameParser: NSObject {
     class func parseToCoreTextData(#templatePath:String, config:CTFrameParserConfig) -> CoreTextData {
         
         var imageArray          = [CoreTextImageData]()
+        var linkArray           = [CoreTextLinkData]()
         
         // 组织富文本
-        let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:&imageArray)
+        let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:&imageArray,linkArray:&linkArray)
         
         // 创建coreTextData
         let coreTextData        = self.parseToCoreTextData(attributedString: content, config: config)
         
         // 设置图片数组
         coreTextData.imageArray = imageArray
+        
+        // 设置超链数组
+        coreTextData.linkArray = linkArray
+        
         return coreTextData
     }
     
@@ -79,7 +84,7 @@ class CTFrameParser: NSObject {
     *
     * @return 富文本
     */
-    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig,inout imageArray:[CoreTextImageData]) -> NSAttributedString {
+    class func parseToNSAttributedString(#templatePath:String,config:CTFrameParserConfig,inout imageArray:[CoreTextImageData],inout linkArray:[CoreTextLinkData]) -> NSAttributedString {
         
         let data = NSData(contentsOfFile: templatePath)
         let result = NSMutableAttributedString()
@@ -112,6 +117,20 @@ class CTFrameParser: NSObject {
                         
                         let subStr = self.parseToNSAttributedString(imageTemplateDic: array[i], config: config)
                         result.appendAttributedString(subStr)
+                    }
+                    
+                    if type == "link" {
+                    
+                        let startPos = result.length
+                        let subStr = self.parseToNSAttributedString(textTemplateDic: array[i], config: config)
+                        result.appendAttributedString(subStr)
+                        
+                        // 创建CoreTextLinkData
+                        let linkData = CoreTextLinkData()
+                        linkData.title = array[i]["content"]
+                        linkData.url = array[i]["url"]
+                        linkData.range = NSMakeRange(startPos, result.length - startPos)
+                        linkArray.append(linkData)
                     }
                 }
             }

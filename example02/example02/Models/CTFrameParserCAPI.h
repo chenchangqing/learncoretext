@@ -28,4 +28,14 @@
  */
 + (CGRect)findImagePosition:(CTFrameRef) ctFrame ctRunIndex:(NSInteger) ctRunIndex ;
 
+/**
+ * 返回字符串的偏移量
+ * @param view 视图
+ * @param point 触摸点
+ * @param textFrame 富文本区域
+ * 
+ * @return 触摸点偏移量
+ */
++ (CFIndex)touchContentOffsetInView:(UIView *)view atPoint:(CGPoint)point data:(CTFrameRef)textFrame;
+
 @end

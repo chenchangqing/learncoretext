@@ -73,8 +73,20 @@ class CTDisplayView: UIView {
                 // 检测点击位置 Point 是否在 rect 之内
                 if CGRectContainsPoint(rect, point) {
                     
-                    println("bingo")
+                    println("\(imageData.name)")
                     break
+                }
+            }
+        }
+        if let linkArray=data?.linkArray {
+            
+            if let data=data {
+                
+                let linkData = CoreTextUtils.touchLink(view: self, atPoint: point, data: data)
+                if let linkData=linkData {
+                    
+                    println("\(linkData.title)")
+                    return
                 }
             }
         }

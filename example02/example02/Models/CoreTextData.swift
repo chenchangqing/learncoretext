@@ -11,6 +11,7 @@ class CoreTextData: NSObject {
     
     var ctFrame     : CTFrameRef!   // 文字渲染区域的信息
     var height      : CGFloat!      // 实际绘制需要的高度
+    var linkArray   : [CoreTextLinkData]?  // 超链数组
     var imageArray  : [CoreTextImageData]? // 图片frame、名称等信息
     {
         willSet {

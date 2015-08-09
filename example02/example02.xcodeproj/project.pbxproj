@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E683ABCF1B77302000C58AEA /* CoreTextLinkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683ABCE1B77302000C58AEA /* CoreTextLinkData.swift */; };
+		E683ABD11B77383200C58AEA /* CoreTextUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E683ABD01B77383200C58AEA /* CoreTextUtils.swift */; };
 		E6860FFC1B75F79100CE4DE4 /* content.json in Resources */ = {isa = PBXBuildFile; fileRef = E6860FFB1B75F79100CE4DE4 /* content.json */; };
 		E6970E571B71AC860005462D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6970E561B71AC860005462D /* AppDelegate.swift */; };
 		E6970E5C1B71AC860005462D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6970E5A1B71AC860005462D /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E683ABCE1B77302000C58AEA /* CoreTextLinkData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextLinkData.swift; sourceTree = "<group>"; };
+		E683ABD01B77383200C58AEA /* CoreTextUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTextUtils.swift; sourceTree = "<group>"; };
 		E6860FFB1B75F79100CE4DE4 /* content.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = content.json; sourceTree = "<group>"; };
 		E6970E511B71AC860005462D /* example02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = example02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6970E551B71AC860005462D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +167,8 @@
 				E6B245C51B76401F004B1F54 /* CoreTextImageData.swift */,
 				E6B245C71B76566F004B1F54 /* CTFrameParserCAPI.h */,
 				E6B245C81B76566F004B1F54 /* CTFrameParserCAPI.m */,
+				E683ABCE1B77302000C58AEA /* CoreTextLinkData.swift */,
+				E683ABD01B77383200C58AEA /* CoreTextUtils.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,12 +288,14 @@
 			files = (
 				E6970E811B71E41C0005462D /* ColorHelper.swift in Sources */,
 				E6970E8E1B71ECEE0005462D /* CTFrameParserConfig.swift in Sources */,
+				E683ABCF1B77302000C58AEA /* CoreTextLinkData.swift in Sources */,
 				E6970E891B71EA450005462D /* CTDisplayView.swift in Sources */,
 				E6970E901B71EEF40005462D /* CoreTextData.swift in Sources */,
 				E6970E8C1B71EA7E0005462D /* UIView+frameAdjust.m in Sources */,
 				E6B245C91B76566F004B1F54 /* CTFrameParserCAPI.m in Sources */,
 				E6970E921B71EF7F0005462D /* CTFrameParser.swift in Sources */,
 				E6970E881B71EA450005462D /* ViewController.swift in Sources */,
+				E683ABD11B77383200C58AEA /* CoreTextUtils.swift in Sources */,
 				E6B245C61B76401F004B1F54 /* CoreTextImageData.swift in Sources */,
 				E6970E571B71AC860005462D /* AppDelegate.swift in Sources */,
 			);
