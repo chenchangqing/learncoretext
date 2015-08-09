@@ -59,10 +59,15 @@ class CTFrameParser: NSObject {
     */
     class func parseToCoreTextData(#templatePath:String, config:CTFrameParserConfig) -> CoreTextData {
         
-        
         var imageArray          = [CoreTextImageData]()
+        
+        // 组织富文本
         let content             = self.parseToNSAttributedString(templatePath: templatePath, config: config, imageArray:&imageArray)
+        
+        // 创建coreTextData
         let coreTextData        = self.parseToCoreTextData(attributedString: content, config: config)
+        
+        // 设置图片数组
         coreTextData.imageArray = imageArray
         return coreTextData
     }
@@ -116,7 +121,7 @@ class CTFrameParser: NSObject {
     }
     
     /**
-     * NSAttributedString实例
+     * 文字富文本
      * @param textTemplateDic 文字属性字典
      * @param config 配置信息
      * 
@@ -152,7 +157,7 @@ class CTFrameParser: NSObject {
     }
     
     /**
-    * NSAttributedString实例
+    * 图片富文本
     * @param textTemplateDic 图片属性字典
     * @param config 配置信息
     *
