@@ -24,3 +24,8 @@ v2.2:可以支持使用json配置文字属性
 v2.3:可以支持使用json配置图片属性，并显示
 
 v2.4:可以支持点击图片事件、点击超链的事件
+
+example03
+
+来源：NSAttributedString的使用详解 http://www.jikexueyuan.com/course/1581_1.html?ss=1
+
