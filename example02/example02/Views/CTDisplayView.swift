@@ -42,7 +42,11 @@ class CTDisplayView: UIView {
         type02(context)
     }
     
+    /**
+     * 最原始的富文本方法
+     */
     private func type01(context:CGContext) {
+        
         // 矩形文字区域
         let path = CGPathCreateMutable();
         CGPathAddRect(path, nil, self.bounds)
@@ -58,6 +62,9 @@ class CTDisplayView: UIView {
 
     }
     
+    /**
+     * 使用模板绘制富文本
+     */
     private func type02(context:CGContext) {
         
         if let data=data {
