@@ -31,3 +31,4 @@ example03
 
 v3.0:简单使用NSAttributedString,在UILabel中现实富文本
 
+v3.1:简易封装NSAttributedString富文本Style
