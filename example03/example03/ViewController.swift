@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var labelone:UILabel!
     var labeltwo:UILabel!
     var labelthree:UILabel!
+    var labelfour:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
         typeOne()
         typeTwo()
         typeThree()
+        typeFour()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,9 +34,10 @@ class ViewController: UIViewController {
      */
     private func typeOne() {
         
-        labelone = UILabel(frame: CGRectMake(16, 36, CGRectGetWidth(self.view.bounds) - 32, 21))
+        labelone = UILabel(frame: CGRectMake(16, 36, CGRectGetWidth(self.view.bounds) - 32, 42))
         labelone.backgroundColor = UIColor.redColor()
-        labelone.text = str
+        labelone.text = "一般写法:\n" + str
+        labelone.numberOfLines = 2
         view.addSubview(labelone)
     }
     
@@ -43,7 +46,7 @@ class ViewController: UIViewController {
      */
     private func typeTwo() {
         
-        let attributedString = NSMutableAttributedString(string: str)
+        let attributedString = NSMutableAttributedString(string: "使用富文本设置UILabel:\n" + str)
         
         // 设置颜色
         attributedString.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(0, 2))
@@ -51,9 +54,10 @@ class ViewController: UIViewController {
         // 设置字体
         attributedString.addAttribute(NSFontAttributeName, value: UIFont.systemFontOfSize(24), range: NSMakeRange(0, 4))
         
-        labeltwo = UILabel(frame: CGRectMake(16, CGRectGetMaxY(labelone.frame) + 16, CGRectGetWidth(labelone.frame), 21 * 5))
+        labeltwo = UILabel(frame: CGRectMake(16, CGRectGetMaxY(labelone.frame) + 16, CGRectGetWidth(labelone.frame), 21 * 3))
         labeltwo.backgroundColor = UIColor.redColor()
         labeltwo.attributedText = attributedString
+        labeltwo.numberOfLines = 2
         
         view.addSubview(labeltwo)
     }
@@ -63,7 +67,7 @@ class ViewController: UIViewController {
      */
     private func typeThree() {
         
-        let attributedString = NSMutableAttributedString(string: str)
+        let attributedString = NSMutableAttributedString(string: "使用包含段落的富文本:\n" + str)
         
         // 设置段落样式
         let style = NSMutableParagraphStyle()
@@ -84,6 +88,23 @@ class ViewController: UIViewController {
         labelthree.numberOfLines = 0 // 设置段落必须增加该设置
         
         view.addSubview(labelthree)
+    }
+    
+    /**
+     * 使用封装后的简易方式
+     */
+    private func typeFour() {
+        
+        labelfour = UILabel(frame: CGRectMake(16, CGRectGetMaxY(labelthree.frame) + 16, CGRectGetWidth(labelthree.frame), 21 * 3))
+        
+        let style01 = ForeGroundColorStyle.attributedStyle(color: UIColor.greenColor(), range: NSMakeRange(0, 2))
+        let style02 = FontStyle.attributedStyle(font: UIFont.systemFontOfSize(24), range: NSMakeRange(2, 4))
+        
+        labelfour.attributedText = ("使用封装后的简易方式:\n" + str).createAttributedStringWithStyles([style01,style02])
+        labelfour.backgroundColor = UIColor.redColor()
+        labelfour.numberOfLines = 2
+        
+        view.addSubview(labelfour)
     }
 }
 
