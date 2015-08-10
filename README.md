@@ -29,3 +29,5 @@ example03
 
 来源：NSAttributedString的使用详解 http://www.jikexueyuan.com/course/1581_1.html?ss=1
 
+v3.0:简单使用NSAttributedString,在UILabel中现实富文本
+
