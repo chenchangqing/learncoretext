@@ -34,3 +34,9 @@ v3.0:简单使用NSAttributedString,在UILabel中显示富文本
 v3.1:简易封装NSAttributedString富文本Style
 
 v3.2:使用GONMarkupParser创建富文本
+
+example04
+
+来源：极客讲师的开源代码 https://github.com/YouXianMing/BookTextView
+
+v4.0:使用TextKit进行富文本排版
