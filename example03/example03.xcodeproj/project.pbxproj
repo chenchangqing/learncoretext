@@ -18,6 +18,7 @@
 		E662CDA51B7778D8008DA50C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E662CDA41B7778D8008DA50C /* Images.xcassets */; };
 		E662CDA81B7778D8008DA50C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E662CDA61B7778D8008DA50C /* LaunchScreen.xib */; };
 		E662CDB41B7778D8008DA50C /* example03Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E662CDB31B7778D8008DA50C /* example03Tests.swift */; };
+		E6AA15011B7992A6009BA573 /* String+GONMarkupDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA15001B7992A6009BA573 /* String+GONMarkupDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,8 @@
 		E662CDAD1B7778D8008DA50C /* example03Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example03Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E662CDB21B7778D8008DA50C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E662CDB31B7778D8008DA50C /* example03Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example03Tests.swift; sourceTree = "<group>"; };
+		E6AA14FC1B7991EE009BA573 /* example03-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "example03-Bridging-Header.h"; sourceTree = "<group>"; };
+		E6AA15001B7992A6009BA573 /* String+GONMarkupDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+GONMarkupDemo.swift"; sourceTree = "<group>"; };
 		E9FADCC1DE3090A4DE80B2BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +122,8 @@
 				E61858AF1B7904BC00EF0B58 /* ForeGroundColorStyle.swift */,
 				E61858B11B79061300EF0B58 /* FontStyle.swift */,
 				E61858B31B7906BA00EF0B58 /* String+AttributeStyle.swift */,
+				E6AA14FC1B7991EE009BA573 /* example03-Bridging-Header.h */,
+				E6AA15001B7992A6009BA573 /* String+GONMarkupDemo.swift */,
 			);
 			path = example03;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				E61858AE1B79035200EF0B58 /* AttributedStyle.swift in Sources */,
 				E61858B41B7906BA00EF0B58 /* String+AttributeStyle.swift in Sources */,
 				E662CDA01B7778D8008DA50C /* ViewController.swift in Sources */,
+				E6AA15011B7992A6009BA573 /* String+GONMarkupDemo.swift in Sources */,
 				E662CD9E1B7778D8008DA50C /* AppDelegate.swift in Sources */,
 				E61858B21B79061300EF0B58 /* FontStyle.swift in Sources */,
 			);
@@ -434,9 +440,12 @@
 			baseConfigurationReference = CB9239EBFC6CD447E573F255 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = example03/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "example03/example03-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -445,9 +454,11 @@
 			baseConfigurationReference = E9FADCC1DE3090A4DE80B2BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = example03/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "example03/example03-Bridging-Header.h";
 			};
 			name = Release;
 		};
