@@ -13,6 +13,13 @@
 		E6AA15181B79AC1E009BA573 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6AA15171B79AC1E009BA573 /* Images.xcassets */; };
 		E6AA151B1B79AC1E009BA573 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6AA15191B79AC1E009BA573 /* LaunchScreen.xib */; };
 		E6AA15271B79AC1E009BA573 /* example04Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA15261B79AC1E009BA573 /* example04Tests.swift */; };
+		E6AA15321B79BA14009BA573 /* ConfigAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA15311B79BA14009BA573 /* ConfigAttributedString.swift */; };
+		E6AA15341B79BFFE009BA573 /* ParagraphAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA15331B79BFFE009BA573 /* ParagraphAttributes.swift */; };
+		E6AA15361B79C504009BA573 /* ExclusionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA15351B79C504009BA573 /* ExclusionView.swift */; };
+		E6AA15391B79C55E009BA573 /* demo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E6AA15371B79C55E009BA573 /* demo@2x.png */; };
+		E6AA153A1B79C55E009BA573 /* lorem.txt in Resources */ = {isa = PBXBuildFile; fileRef = E6AA15381B79C55E009BA573 /* lorem.txt */; };
+		E6AA153C1B79C586009BA573 /* BookTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA153B1B79C586009BA573 /* BookTextView.swift */; };
+		E6AA153E1B79D0DE009BA573 /* ParagraphAttributes+Constructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AA153D1B79D0DE009BA573 /* ParagraphAttributes+Constructor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +43,14 @@
 		E6AA15201B79AC1E009BA573 /* example04Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = example04Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AA15251B79AC1E009BA573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6AA15261B79AC1E009BA573 /* example04Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example04Tests.swift; sourceTree = "<group>"; };
+		E6AA15311B79BA14009BA573 /* ConfigAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigAttributedString.swift; sourceTree = "<group>"; };
+		E6AA15331B79BFFE009BA573 /* ParagraphAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParagraphAttributes.swift; sourceTree = "<group>"; };
+		E6AA15351B79C504009BA573 /* ExclusionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExclusionView.swift; sourceTree = "<group>"; };
+		E6AA15371B79C55E009BA573 /* demo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "demo@2x.png"; sourceTree = "<group>"; };
+		E6AA15381B79C55E009BA573 /* lorem.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = lorem.txt; sourceTree = "<group>"; };
+		E6AA153B1B79C586009BA573 /* BookTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookTextView.swift; sourceTree = "<group>"; };
+		E6AA153D1B79D0DE009BA573 /* ParagraphAttributes+Constructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParagraphAttributes+Constructor.swift"; sourceTree = "<group>"; };
+		E6AA153F1B79D54E009BA573 /* 方正清刻本悦宋简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正清刻本悦宋简体.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +92,15 @@
 		E6AA150D1B79AC1E009BA573 /* example04 */ = {
 			isa = PBXGroup;
 			children = (
+				E6AA15301B79B9F3009BA573 /* AttributeString */,
 				E6AA15101B79AC1E009BA573 /* AppDelegate.swift */,
 				E6AA15121B79AC1E009BA573 /* ViewController.swift */,
 				E6AA15141B79AC1E009BA573 /* Main.storyboard */,
 				E6AA15171B79AC1E009BA573 /* Images.xcassets */,
 				E6AA15191B79AC1E009BA573 /* LaunchScreen.xib */,
 				E6AA150E1B79AC1E009BA573 /* Supporting Files */,
+				E6AA15351B79C504009BA573 /* ExclusionView.swift */,
+				E6AA153B1B79C586009BA573 /* BookTextView.swift */,
 			);
 			path = example04;
 			sourceTree = "<group>";
@@ -90,6 +108,9 @@
 		E6AA150E1B79AC1E009BA573 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E6AA153F1B79D54E009BA573 /* 方正清刻本悦宋简体.ttf */,
+				E6AA15371B79C55E009BA573 /* demo@2x.png */,
+				E6AA15381B79C55E009BA573 /* lorem.txt */,
 				E6AA150F1B79AC1E009BA573 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +131,16 @@
 				E6AA15251B79AC1E009BA573 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E6AA15301B79B9F3009BA573 /* AttributeString */ = {
+			isa = PBXGroup;
+			children = (
+				E6AA15311B79BA14009BA573 /* ConfigAttributedString.swift */,
+				E6AA15331B79BFFE009BA573 /* ParagraphAttributes.swift */,
+				E6AA153D1B79D0DE009BA573 /* ParagraphAttributes+Constructor.swift */,
+			);
+			name = AttributeString;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AA153A1B79C55E009BA573 /* lorem.txt in Resources */,
 				E6AA15161B79AC1E009BA573 /* Main.storyboard in Resources */,
+				E6AA15391B79C55E009BA573 /* demo@2x.png in Resources */,
 				E6AA151B1B79AC1E009BA573 /* LaunchScreen.xib in Resources */,
 				E6AA15181B79AC1E009BA573 /* Images.xcassets in Resources */,
 			);
@@ -212,7 +245,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6AA153E1B79D0DE009BA573 /* ParagraphAttributes+Constructor.swift in Sources */,
 				E6AA15131B79AC1E009BA573 /* ViewController.swift in Sources */,
+				E6AA15341B79BFFE009BA573 /* ParagraphAttributes.swift in Sources */,
+				E6AA15321B79BA14009BA573 /* ConfigAttributedString.swift in Sources */,
+				E6AA15361B79C504009BA573 /* ExclusionView.swift in Sources */,
+				E6AA153C1B79C586009BA573 /* BookTextView.swift in Sources */,
 				E6AA15111B79AC1E009BA573 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,6 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = example04/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = example04/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
