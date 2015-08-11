@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var labeltwo:UILabel!
     var labelthree:UILabel!
     var labelfour:UILabel!
+    var labelfive:UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
         typeTwo()
         typeThree()
         typeFour()
+        typeFive()
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,6 +107,19 @@ class ViewController: UIViewController {
         labelfour.numberOfLines = 2
         
         view.addSubview(labelfour)
+    }
+    
+    /**
+     * 使用GONMarkupParser
+     */
+    private func typeFive() {
+        
+        let markStr = "使用GONMarkupParser:".addColorMark("green") + "<br/>" + str.addColorMark("red")
+        labelfive = UILabel(frame: CGRectMake(16, CGRectGetMaxY(labelfour.frame) + 16, CGRectGetWidth(labelfour.frame), 21 * 3))
+        labelfive.numberOfLines = 0
+        labelfive.attributedText = markStr.createAttributedStringWithGONMarkupParser()
+        
+        view.addSubview(labelfive)
     }
 }
 
