@@ -1,11 +1,9 @@
 # learncoretext
 学习IOS之CoreText
 
-环境：
+环境：xcode-6.3.2 swift-1.2
 
-xcode-6.3.2 swift-1.2
-
-example01
+----- ----- ----- example01 ----- ----- ----- 
 
 来源：iOS开发指南第二版Text Kit基础
 
@@ -15,7 +13,7 @@ v1.1:环绕图片的文字
 
 v1.2:根据设置动态改变字体
 
-example02
+----- ----- ----- example02 ----- ----- ----- 
 
 来源：基于 CoreText 的排版引擎 http://blog.devtang.com/blog/2015/06/27/using-coretext-1/
 
@@ -29,7 +27,7 @@ v2.3:可以支持使用json配置图片属性，并显示
 
 v2.4:可以支持点击图片事件、点击超链的事件
 
-example03
+----- ----- ----- example03 ----- ----- ----- 
 
 来源：NSAttributedString的使用详解 http://www.jikexueyuan.com/course/1581_1.html?ss=1
 
@@ -39,7 +37,7 @@ v3.1:简易封装NSAttributedString富文本Style
 
 v3.2:使用GONMarkupParser创建富文本
 
-example04
+----- ----- ----- example04 ----- ----- ----- 
 
 来源：极客讲师的开源代码 https://github.com/YouXianMing/BookTextView
 
