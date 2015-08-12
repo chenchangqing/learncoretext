@@ -1,6 +1,10 @@
 # learncoretext
 学习IOS之CoreText
 
+环境：
+
+xcode-6.3.2 swift-1.2
+
 example01
 
 来源：iOS开发指南第二版Text Kit基础
