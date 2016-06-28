@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         bookView.attributes.append(
             ConfigAttributedString.getStrokeColorInstance(UIColor.blackColor(), range: NSMakeRange(0, 9)))
         bookView.attributes.append(
-            ConfigAttributedString.getInstance(UIFont(name: QingKeBengYue, size: 22)!, range: NSMakeRange(0,9)))
+            ConfigAttributedString.getFontInstance(UIFont(name: QingKeBengYue, size: 22)!, range: NSMakeRange(0,9)))
         
         // 加载图片
         let exclusionView       = ExclusionView(frame: CGRectMake(150, 195, 320, 150))

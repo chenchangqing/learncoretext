@@ -27,7 +27,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置字体
-    class func getInstance(font:UIFont, range:NSRange) -> ConfigAttributedString {
+    class func getFontInstance(font:UIFont, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
