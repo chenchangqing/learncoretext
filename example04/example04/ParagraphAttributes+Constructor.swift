@@ -15,7 +15,7 @@ let TextColor = UIColor(red: 0.600, green: 0.490, blue: 0.376, alpha: 1)
 extension ParagraphAttributes {
     
     // 便利构造器
-    class func qingKeBengYue() -> [NSObject:AnyObject] {
+    class func qingKeBengYue() -> [String:AnyObject] {
         
         let config = ParagraphAttributes()
         

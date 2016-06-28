@@ -20,9 +20,9 @@ class ParagraphAttributes: NSObject {
     /**
      * 创建富文本属性字典
      */
-    func createAttributes() -> [NSObject : AnyObject] {
+    func createAttributes() -> [String : AnyObject] {
         
-        var attributes = [NSObject : AnyObject]()
+        var attributes = [String : AnyObject]()
         
         attributes[NSForegroundColorAttributeName]  = textColor
         attributes[NSFontAttributeName]             = textFont

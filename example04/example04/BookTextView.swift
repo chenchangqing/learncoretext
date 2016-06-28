@@ -19,7 +19,7 @@ class BookTextView: UIView, UITextViewDelegate {
     var textString              = ""
     
     // 段落样式的设置
-    var paragraphAttributes     = [NSObject:AnyObject]()
+    var paragraphAttributes     = [String:AnyObject]()
     
     // 富文本参数数组(ConfigAttributedString对象的数组)
     var attributes              = [ConfigAttributedString]()
@@ -173,7 +173,7 @@ class BookTextView: UIView, UITextViewDelegate {
                 currentPercent = 1
             }
             
-            println("\(currentPercent)")
+            print("\(currentPercent)")
         } else if bookStatus == .EBOOK_CALCULATE_HEIGHT {
             
             self.textHeight = scrollView.contentOffset.y

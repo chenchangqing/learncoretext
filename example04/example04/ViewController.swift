@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         if let path=path {
             
-            let text = String(contentsOfFile: path, encoding: NSUTF8StringEncoding, error: nil)!
+            let text = try!String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
             bookView.textString = text
         }
         
@@ -32,9 +32,9 @@ class ViewController: UIViewController {
         
         // 设置富文本
         bookView.attributes.append(
-            ConfigAttributedString.getInstance(foregroundColor: UIColor.blackColor(), range: NSMakeRange(0, 9)))
+            ConfigAttributedString.getStrokeColorInstance(UIColor.blackColor(), range: NSMakeRange(0, 9)))
         bookView.attributes.append(
-            ConfigAttributedString.getInstance(font: UIFont(name: QingKeBengYue, size: 22)!, range: NSMakeRange(0,9)))
+            ConfigAttributedString.getInstance(UIFont(name: QingKeBengYue, size: 22)!, range: NSMakeRange(0,9)))
         
         // 加载图片
         let exclusionView       = ExclusionView(frame: CGRectMake(150, 195, 320, 150))

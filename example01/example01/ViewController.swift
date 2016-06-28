@@ -84,10 +84,10 @@ class ViewController: UIViewController {
     private func mark(word:String,inTextStorage textStorage:NSTextStorage) {
 
         // 正则
-        let regex = NSRegularExpression(pattern: word, options: nil, error: nil)!
+        let regex = try!NSRegularExpression(pattern: word, options: [NSRegularExpressionOptions.AllowCommentsAndWhitespace])
         
         // 根据正则匹配结果
-        let matches = regex.matchesInString(textStorage.string, options: nil, range: NSMakeRange(0, count(textStorage.string)))
+        let matches = regex.matchesInString(textStorage.string, options: [NSMatchingOptions.Anchored], range: NSMakeRange(0, textStorage.string.characters.count))
         
         // 给指定单词设置颜色
         for match in matches {

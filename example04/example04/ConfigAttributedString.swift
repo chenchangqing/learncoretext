@@ -15,7 +15,7 @@ class ConfigAttributedString: NSObject {
     var range       : NSRange!      // 富文本范围值
     
     // 通用型配置
-    class func getInstance(#attribute:String, value:AnyObject, range:NSRange) -> ConfigAttributedString {
+    class func getInstance(attribute:String, value:AnyObject, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -27,7 +27,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置字体
-    class func getInstance(#font:UIFont, range:NSRange) -> ConfigAttributedString {
+    class func getInstance(font:UIFont, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -39,7 +39,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置字体颜色
-    class func getInstance(#foregroundColor:UIColor, range:NSRange) -> ConfigAttributedString {
+    class func getForegroundColorInstance(foregroundColor:UIColor, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -51,7 +51,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置字体背景颜色
-    class func getInstance(#backgroundColor:UIColor, range:NSRange) -> ConfigAttributedString {
+    class func getBackgroundColorInstance(backgroundColor:UIColor, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -63,7 +63,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置文字的中划线
-    class func getInstance(#strikethroughStyle:NSInteger, range:NSRange) -> ConfigAttributedString {
+    class func getStrikethroughStyleInstance(strikethroughStyle:NSInteger, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -75,7 +75,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 段落样式(需要将UILabel中的numberOfLines设置成0才有用)
-    class func getInstance(#paragraphStyle:NSMutableParagraphStyle, range:NSRange) -> ConfigAttributedString {
+    class func getParagraphStyleInstance(paragraphStyle:NSMutableParagraphStyle, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -87,7 +87,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 字间距
-    class func getInstance(#kern:Float, range:NSRange) -> ConfigAttributedString {
+    class func getKernInstance(kern:Float, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -99,7 +99,7 @@ class ConfigAttributedString: NSObject {
     }
     
     // 配置文字的下划线
-    class func getInstance(#underlineStyle:Int, range:NSRange) -> ConfigAttributedString {
+    class func getUnderlineStyleInstance(underlineStyle:Int, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -112,7 +112,7 @@ class ConfigAttributedString: NSObject {
     
     // MARK: - 字体描边颜色 \ 描边宽度 \ 阴影 (以下两个方法可以一起使用)
     
-    class func getInstance(#strokeColor:UIColor, range:NSRange) -> ConfigAttributedString {
+    class func getStrokeColorInstance(strokeColor:UIColor, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -123,7 +123,7 @@ class ConfigAttributedString: NSObject {
         return config
     }
     
-    class func getInstance(#strokeWidth:Float, range:NSRange) -> ConfigAttributedString {
+    class func getStrokeWidthInstance(strokeWidth:Float, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
@@ -134,7 +134,7 @@ class ConfigAttributedString: NSObject {
         return config
     }
     
-    class func getInstance(#shadow:NSShadow, range:NSRange) -> ConfigAttributedString {
+    class func getShadowInstance(shadow:NSShadow, range:NSRange) -> ConfigAttributedString {
         
         let config = ConfigAttributedString()
         
