@@ -32,7 +32,11 @@ class ViewController: UIViewController {
         
         // 设置富文本
         bookView.attributes.append(
-            ConfigAttributedString.getStrokeColorInstance(UIColor.blackColor(), range: NSMakeRange(0, 9)))
+            ConfigAttributedString.getStrokeColorInstance(TextColor, range:
+                NSMakeRange(0, 9)))
+        bookView.attributes.append(
+            ConfigAttributedString.getStrokeWidthInstance(3, range:
+                NSMakeRange(0,9)))
         bookView.attributes.append(
             ConfigAttributedString.getFontInstance(UIFont(name: QingKeBengYue, size: 22)!, range: NSMakeRange(0,9)))
         
